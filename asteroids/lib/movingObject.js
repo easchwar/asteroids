@@ -23,13 +23,3 @@
   };
 
 })();
-
-// var options = {
-//   pos: [50,50],
-//   radius: 10,
-//   color: 'red'
-// };
-// var mov = new window.Asteroids.MovingObject(options);
-// var canvas = document.getElementById("canvas");
-// var ctx = canvas.getContext("2d");
-// mov.draw(ctx);

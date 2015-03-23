@@ -30,4 +30,6 @@
       this.game.remove(otherObj);
     }
   };
+
+  Bullet.prototype.isWrappable = false;
 })();

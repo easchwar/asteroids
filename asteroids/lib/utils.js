@@ -19,4 +19,10 @@
     y = y * length / scale;
     return [x, y];
   };
+
+  window.Asteroids.Util.distance = function(obj1, obj2) {
+    var x = obj1.pos[0] - obj2.pos[0];
+    var y = obj1.pos[1] - obj2.pos[1];
+    return Math.sqrt(x * x + y * y);
+  };
 })();

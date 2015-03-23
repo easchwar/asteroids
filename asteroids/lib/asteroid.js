@@ -8,6 +8,7 @@
       color: Asteroid.COLOR,
       radius: Asteroid.RADIUS,
       pos: options.pos,
+      game: options.game,
       vel: window.Asteroids.Util.randomVec(11) // TODO change this?
     };
 

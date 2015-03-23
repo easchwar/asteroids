@@ -35,5 +35,8 @@
     window.key('left', function() {
       this.game.ship.power([-1, 0]);
     }.bind(this));
+    window.key('space', function() {
+      this.game.ship.fireBullet();
+    }.bind(this));
   };
 })();

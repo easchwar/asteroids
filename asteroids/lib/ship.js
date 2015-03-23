@@ -31,4 +31,8 @@
     this.vel[1] += impulse[1];
   };
 
+  Ship.prototype.fireBullet = function() {
+    this.game.add(new window.Asteroids.Bullet(this));
+  };
+
 })();

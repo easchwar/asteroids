@@ -28,8 +28,5 @@
     return window.Asteroids.Util.distance(this, otherObject) < (this.radius + otherObject.radius);
   };
 
-  MovingObject.prototype.collideWith = function(otherObject) {
-    this.game.remove(this);
-    this.game.remove(otherObject);
-  };
+  MovingObject.prototype.collideWith = function(otherObject) {};
 })();

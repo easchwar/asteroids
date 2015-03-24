@@ -3,19 +3,23 @@
     window.Asteroids = {};
   }
 
-  var Game = window.Asteroids.Game = function() {
-    this.asteroids = this.addAsteroids();
+  var Game = window.Asteroids.Game = function(numAsteroids) {
+    this.numOfAsteroids = 1;
+    console.log(numAsteroids);
+    if (numAsteroids) {
+      this.numOfAsteroids = numAsteroids;
+    }
+    this.asteroids = this.addAsteroids(this.numOfAsteroids);
     this.ship = new window.Asteroids.Ship({game: this});
     this.bullets = [];
   };
 
   Game.DIM_X = window.innerWidth;
   Game.DIM_Y = window.innerHeight;
-  Game.NUM_ASTEROIDS = 10;
 
-  Game.prototype.addAsteroids = function() {
+  Game.prototype.addAsteroids = function(numOfAsteroids) {
     var result = [];
-    for (var i = 0; i < Game.NUM_ASTEROIDS; i++) {
+    for (var i = 0; i < numOfAsteroids; i++) {
       var options = {
         pos: this.randomPosition(),
         game: this
@@ -93,6 +97,10 @@
 
   Game.prototype.isOutOfBounds = function(pos) {
     return pos[0] < 0 || pos[0] >= Game.DIM_X || pos[1] < 0 || pos[1] >= Game.DIM_Y;
+  };
+
+  Game.prototype.isOver = function() {
+    return this.asteroids.length === 0;
   };
 
 })();

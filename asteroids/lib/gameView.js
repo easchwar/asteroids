@@ -11,8 +11,17 @@
   GameView.prototype.start = function() {
     this.bindKeyHandlers();
     this.interval = window.setInterval(function() {
+      if (this.game.isOver()) {
+        this.game = new window.Asteroids.Game(Math.floor(this.game.numOfAsteroids * 2));
+        // var newGame = new window.Asteroids.Game(Math.floor(this.game.NUM_ASTEROIDS * 1.5));
+        // var newView = new GameView(newGame, this.ctx);
+        // this.stop();
+        // newView.start();
+      }
+
       this.game.step();
       this.game.draw(this.ctx);
+
     }.bind(this), 20);
   };
 

@@ -3,10 +3,20 @@
   <head>
     <title></title>
     <script src="./lib/keymaster.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+      canvas {
+        display: block;
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
 
-    <canvas id="canvas" width="500" height="400"></canvas>
     <script src="./lib/movingObject.js"></script>
     <script src="./lib/utils.js"></script>
     <script src="./lib/asteroid.js"></script>
@@ -14,8 +24,17 @@
     <script src="./lib/gameView.js"></script>
     <script src="./lib/ship.js"></script>
     <script src="./lib/bullet.js"></script>
+    <script src="./lib/images.js"></script>
     <script>
-      var canvas = document.getElementById("canvas");
+      var body = document.getElementsByTagName("body")[0];
+
+      var canvas = document.createElement('canvas');
+      canvas.id = "canvas";
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      body.appendChild(canvas);
+
+      // var canvas = document.getElementById("canvas");
       var ctx = canvas.getContext("2d");
       var game = new window.Asteroids.Game();
       var gameView = new window.Asteroids.GameView(game, ctx);

@@ -9,9 +9,9 @@
     this.bullets = [];
   };
 
-  Game.DIM_X = 500;
-  Game.DIM_Y = 400;
-  Game.NUM_ASTEROIDS = 2;
+  Game.DIM_X = window.innerWidth;
+  Game.DIM_Y = window.innerHeight;
+  Game.NUM_ASTEROIDS = 10;
 
   Game.prototype.addAsteroids = function() {
     var result = [];
@@ -33,6 +33,7 @@
 
   Game.prototype.draw = function(ctx) {
     ctx.clearRect(0,0, Game.DIM_X, Game.DIM_Y);
+    ctx.drawImage(window.Asteroids.img, 0, 0); // TODO change this?
     this.allObjects().forEach(function(obj) {
       obj.draw(ctx);
     });

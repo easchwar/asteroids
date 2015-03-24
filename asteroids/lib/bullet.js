@@ -21,7 +21,7 @@
   };
 
   Bullet.RADIUS = 2;
-  Bullet.COLOR = '#000000';
+  Bullet.COLOR = 'white';
 
   window.Asteroids.Util.inherits(Bullet, window.Asteroids.MovingObject);
 

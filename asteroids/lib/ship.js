@@ -13,6 +13,8 @@
     };
 
     window.Asteroids.MovingObject.call(this, superOptions);
+    // this.img = document.createElement('img');
+    // this.img.src = './ufo.png';
   };
 
 
@@ -33,6 +35,14 @@
 
   Ship.prototype.fireBullet = function() {
     this.game.add(new window.Asteroids.Bullet(this));
+  };
+
+  Ship.prototype.draw = function(ctx) {
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2*Math.PI);
+    ctx.fill();
+    // ctx.drawImage(this.img, this.pos[0], this.pos[1]);
   };
 
 })();

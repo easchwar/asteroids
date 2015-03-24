@@ -30,7 +30,6 @@
   };
 
   GameView.prototype.bindKeyHandlers = function() {
-
     window.key('up', function() {
       this.game.ship.power([0, -1]);
       console.log("pressed up");
